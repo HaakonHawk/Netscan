@@ -1,2 +1,2 @@
 # Netscan
-Local Area Network Scanner - Identify machines in your network with a single click.
+Scan Local Area Networks for active machines and find MAC address + Manufacturer Name and known protocols.

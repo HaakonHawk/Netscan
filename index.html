@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Techware Ninja Netscan</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="includes/fa/css/font-awesome.min.css" type="text/css"/>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="functions.js"></script>
+    <script>if (window.module) module = window.module;</script>
+    <script src="magic.js"></script>
+  </head>
+  <body>
+    <form>
+      <input class="ip" type="text" value="" placeholder="E.G 192.168.0.1-255" />
+      <button type="submit">Scan</button>
+    </form>
+    <div id="main">
+      <div class="controls">
+        <button class="toggle">Hide Offline Results</button>
+        <p class="scan-status"></p>
+      </div>
+      <table class="result">
+        <tbody class="sort-header"></tbody>
+        <tbody class="sort-online"></tbody>
+        <tbody class="sort-offline"></tbody>
+      </table>
+      <div class="welcome-text">
+        <h1>Netscan <span class="smaller">by Techware Ninja</span></h1>
+        <h2>Click the "Scan" button to start scanning the network</h2>
+      </div>
+    </div>
+  </body>
+</html>

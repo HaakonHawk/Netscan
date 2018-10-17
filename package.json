@@ -1,0 +1,55 @@
+{
+  "name": "Netscan",
+  "ProductName": "Techware Ninja Netscan",
+  "version": "1.0.1",
+  "license": "GPL-3.0",
+  "description": "Scan Local Area Networks for active machines and find MAC address + Manufacturer Name and known protocols.",
+  "homepage": "http://netscan.techware.ninja/",
+  "author": {
+    "name": "Techware Ninja",
+    "email": "contact@hawkprojects.net"
+  },
+  "main": "main.js",
+  "scripts": {
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=build/icon.icns --prune=true --out=../release-builds",
+    "package-win": "electron-packager . Netscan --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true --out=../release-builds --version-string.CompanyName=\"Techware Ninja\" --version-string.FileDescription=\"Network Scanner for Local Area Networks\" --version-string.ProductName=\"Techware Ninja Netscan\"",
+    "package-linux": "electron-packager . Netscan --overwrite --asar=true --platform=linux --arch=x64 --icon=build/icon.png --prune=true --out=../release-builds"
+  },
+  "build": {
+    "appId": "com.netscan.app",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {
+    "node-arp": "^1.0.5",
+    "ping": "^0.2.2",
+    "tcp-ping": "^0.1.1"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-packager": "^9.1.0",
+    "electron-builder": "latest"
+  }
+}
